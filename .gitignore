@@ -5,9 +5,4 @@ archives/
 yarn-error.log
 .pnpm-debug.log
 server*.log
-*.png
-*.jpg
-*.jpeg
-*.bmp
-*.zwc*
 /all.json
