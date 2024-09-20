@@ -1,0 +1,9 @@
+{
+  "id": "tiktok",
+  "name": "TikTok",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://www.tiktok.com/",
+    "extension": {}
+  }
+}

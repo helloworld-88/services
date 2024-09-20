@@ -1,0 +1,9 @@
+{
+  "id": "instagram",
+  "name": "Instagram",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://instagram.com/",
+    "extension": {}
+  }
+}

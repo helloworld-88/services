@@ -1,0 +1,9 @@
+{
+  "id": "facebook",
+  "name": "Facebook",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://www.facebook.com/login",
+    "extension": {}
+  }
+}

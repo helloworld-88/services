@@ -1,0 +1,9 @@
+{
+  "id": "band",
+  "name": "Band",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://band.us/",
+    "extension": {}
+  }
+}

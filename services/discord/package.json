@@ -1,0 +1,9 @@
+{
+  "id": "discord",
+  "name": "Discord",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://discord.com/login/",
+    "extension": {}
+  }
+}

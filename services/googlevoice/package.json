@@ -1,0 +1,12 @@
+{
+  "id": "googlevoice",
+  "name": "Google Voice",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://voice.google.com/",
+    "extension": {
+      "id": "voiceMessSend",
+      "version": "1.0.0"
+    }
+  }
+}

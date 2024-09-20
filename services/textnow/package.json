@@ -1,0 +1,9 @@
+{
+  "id": "textnow",
+  "name": "TextNow",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://www.textnow.com/",
+    "extension": {}
+  }
+}

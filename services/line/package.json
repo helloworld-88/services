@@ -1,0 +1,12 @@
+{
+  "id": "line",
+  "name": "Line",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html",
+    "extension": {
+      "id": "ophjlpahpchlmihnnnihgmmeilfjmjjc",
+      "version": "3.5.1_0"
+    }
+  }
+}

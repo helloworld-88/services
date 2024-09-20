@@ -1,0 +1,12 @@
+{
+  "id": "tinder",
+  "name": "Tinder",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://tinder.com/",
+    "extension": {
+      "id": "cfohepagpmnodfdmjliccbbigdkfcgia",
+      "version": "2.5.0_0"
+    }
+  }
+}

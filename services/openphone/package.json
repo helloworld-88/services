@@ -1,0 +1,9 @@
+{
+  "id": "openPhone",
+  "name": "OpenPhone",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://my.openphone.com/",
+    "extension": {}
+  }
+}

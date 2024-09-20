@@ -1,0 +1,9 @@
+{
+  "id": "linkedin",
+  "name": "Linkedin",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://www.linkedin.com/",
+    "extension": {}
+  }
+}

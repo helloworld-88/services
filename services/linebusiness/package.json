@@ -1,0 +1,9 @@
+{
+  "id": "linebusiness",
+  "name": "Line Business",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://manager.line.biz/",
+    "extension": {}
+  }
+}

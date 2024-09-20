@@ -1,0 +1,9 @@
+{
+  "id": "facebook",
+  "name": "Facebook Business",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://business.facebook.com/",
+    "extension": {}
+  }
+}

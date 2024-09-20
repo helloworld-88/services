@@ -1,0 +1,9 @@
+{
+  "id": "messenger",
+  "name": "Messenger",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://www.messenger.com/",
+    "extension": {}
+  }
+}

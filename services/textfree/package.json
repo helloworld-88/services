@@ -1,0 +1,9 @@
+{
+  "id": "textfree",
+  "name": "TextFree",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://messages.textfree.us/",
+    "extension": {}
+  }
+}

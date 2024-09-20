@@ -1,0 +1,9 @@
+{
+  "id": "telegram_a",
+  "name": "Telegram A版",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://web.telegram.org/a/",
+    "extension": {}
+  }
+}

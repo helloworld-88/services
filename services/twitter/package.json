@@ -1,0 +1,9 @@
+{
+  "id": "twitter",
+  "name": "Twitter",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://x.com/i/flow/login/",
+    "extension": {}
+  }
+}

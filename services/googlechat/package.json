@@ -1,0 +1,9 @@
+{
+  "id": "googlechat",
+  "name": "Google Chat",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://chat.google.com/",
+    "extension": {}
+  }
+}

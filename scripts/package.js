@@ -4,7 +4,7 @@
 const startTime = new Date();
 
 /**
- * Package all recipes
+ * Package all services
  */
 const targz = require('targz');
 const fs = require('fs-extra');

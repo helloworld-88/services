@@ -1,0 +1,9 @@
+{
+  "id": "whatsapp_a",
+  "name": "WhatsApp純淨版",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://web.whatsapp.com/",
+    "extension": {}
+  }
+}

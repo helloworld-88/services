@@ -1,0 +1,9 @@
+{
+  "id": "vk",
+  "name": "VKontakte",
+  "version": "1.0.0",
+  "config": {
+    "serviceURL": "https://vk.com/",
+    "extension": {}
+  }
+}
