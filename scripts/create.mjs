@@ -22,8 +22,8 @@ pnpm create WhatsApp FerdiumDev
 
 const recipeName = process.argv[2];
 const recipe = recipeName.toLowerCase().replaceAll(/\s/g, '-');
-const folderName = process.argv[3] || 'Ferdium';
-const filesThatNeedTextReplace = ['package.json', 'index.js', 'webview.js'];
+const folderName = process.argv[3] || 'HelloWorld';
+const filesThatNeedTextReplace = ['package.json', 'index.js'];
 
 const toPascalCase = str => {
   const words = str
@@ -47,10 +47,10 @@ const pascalCasedName = toPascalCase(recipe); // PascalCased recipe ID only cont
     (process.platform === 'darwin'
       ? `${process.env.HOME}/Library/Application Support`
       : `${process.env.HOME}/.config`);
-  const recipesFolder = path.join(userData, folderName, 'recipes');
+  const recipesFolder = path.join(userData, folderName, 'services');
   const devRecipeFolder = path.join(recipesFolder, 'dev');
   const newRecipeFolder = path.join(devRecipeFolder, recipe);
-  const sampleRecipe = path.join(import.meta.dirname, 'sample_recipe'); // Starting with Node.js 20.11 / 21.2, you can use import.meta.dirname
+  const sampleRecipe = path.join(import.meta.dirname, 'sample_services'); // Starting with Node.js 20.11 / 21.2, you can use import.meta.dirname
 
   // Make sure dev recipe folder exists
   if (!fs.existsSync(recipesFolder)) {

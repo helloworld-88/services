@@ -14,12 +14,12 @@ const simpleGit = require('simple-git');
 
 const pkgVersionChangedMatcher = /\n\+.*version.*/;
 
-// Publicly availible link to this repository's recipe folder
-// Used for generating public icon URLs
+//指向此存储库配方文件夹的公开链接
+//用于生成公共图标URL
 const repo =
-  'https://cdn.jsdelivr.net/gh/ferdium/ferdium-recipes@main/recipes/';
+  'https://cdn.jsdelivr.net/gh/helloworld-88/services@main/services/';
 
-// Helper: Compress src folder into dest file
+// 助手：将src文件夹压缩到dest文件中
 const compress = (src, dest) =>
   new Promise((resolve, reject) => {
     targz.compress(
@@ -27,7 +27,7 @@ const compress = (src, dest) =>
         src,
         dest,
         tar: {
-          // Don't package .DS_Store files and .md files
+          // 不要打包。DS_存储文件和.md文件
           ignore(name) {
             return (
               path.basename(name) === '.DS_Store' ||
@@ -49,14 +49,12 @@ const compress = (src, dest) =>
 
 // Let us work in an async environment
 (async () => {
-  // Create paths to important files
+  // 创建重要文件的路径
   const repoRoot = path.join(__dirname, '..');
   const tempFolder = path.join(repoRoot, 'temp');
-  const recipesFolder = path.join(repoRoot, 'recipes');
+  const recipesFolder = path.join(repoRoot, 'services');
   const outputFolder = path.join(repoRoot, 'archives');
   const allJson = path.join(repoRoot, 'all.json');
-  const featuredFile = path.join(repoRoot, 'featured.json');
-  const featuredRecipes = fs.readJSONSync(featuredFile);
   let recipeList = [];
   let unsuccessful = 0;
 
@@ -79,7 +77,7 @@ const compress = (src, dest) =>
 
   for (const recipe of availableRecipes) {
     const recipeSrc = path.join(recipesFolder, recipe);
-    const mandatoryFiles = ['package.json', 'webview.js'];
+    const mandatoryFiles = ['package.json', 'index.js'];
 
     // Check that each mandatory file exists
     for (const file of mandatoryFiles) {
@@ -96,7 +94,7 @@ const compress = (src, dest) =>
     }
 
     // Check icons sizes
-    const svgIcon = path.join(recipeSrc, 'icon.svg');
+    const svgIcon = path.join(recipeSrc, 'icon.png');
     if (fs.existsSync(svgIcon)) {
       const svgSize = sizeOf(svgIcon);
       const svgHasRightSize = svgSize.width === svgSize.height;
@@ -172,7 +170,7 @@ const compress = (src, dest) =>
           );
         }
       } else if (
-        (key === 'config' || key === 'aliases') &&
+        (key === 'config') &&
         typeof config[key] !== 'object'
       ) {
         configErrors.push(
@@ -185,11 +183,7 @@ const compress = (src, dest) =>
       'id',
       'name',
       'version',
-      'license',
-      'repository',
-      'aliases',
       'config',
-      'defaultIcon',
     ]);
     const unrecognizedKeys = topLevelKeys.filter(
       x => !knownTopLevelKeys.has(x),
@@ -203,17 +197,7 @@ const compress = (src, dest) =>
       const configKeys = Object.keys(config.config);
       const knownConfigKeys = new Set([
         'serviceURL',
-        'hasTeamId',
-        'urlInputPrefix',
-        'urlInputSuffix',
-        'hasHostedOption',
-        'hasCustomUrl',
-        'hasNotificationSound',
-        'hasDirectMessages',
-        'hasIndirectMessages',
-        'allowFavoritesDelineationInUnreadCount',
-        'message',
-        'disablewebsecurity',
+        'extension'
       ]);
       const unrecognizedConfigKeys = configKeys.filter(
         x => !knownConfigKeys.has(x),
@@ -328,15 +312,12 @@ const compress = (src, dest) =>
     );
 
     // Add recipe to all.json
-    const isFeatured = featuredRecipes.includes(config.id);
     const packageInfo = {
-      featured: isFeatured,
       id: config.id,
       name: config.name,
       version: config.version,
-      aliases: config.aliases,
       icons: {
-        svg: `${repo}${config.id}/icon.svg`,
+        svg: `${repo}${config.id}/icon.png`,
       },
     };
     recipeList.push(packageInfo);
