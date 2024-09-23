@@ -32,7 +32,7 @@ const compress = (src, dest) =>
             return (
               path.basename(name) === '.DS_Store' ||
               name.endsWith('.md') ||
-              name.endsWith('.svg')
+              name.endsWith('.png')
             );
           },
         },
@@ -94,13 +94,13 @@ const compress = (src, dest) =>
     }
 
     // Check icons sizes
-    const svgIcon = path.join(recipeSrc, 'icon.png');
-    if (fs.existsSync(svgIcon)) {
-      const svgSize = sizeOf(svgIcon);
-      const svgHasRightSize = svgSize.width === svgSize.height;
-      if (!svgHasRightSize) {
+    const pngIcon = path.join(recipeSrc, 'icon.png');
+    if (fs.existsSync(pngIcon)) {
+      const pngSize = sizeOf(pngIcon);
+      const pngHasRightSize = pngSize.width === pngSize.height;
+      if (!pngHasRightSize) {
         console.log(
-          `⚠️ Couldn't package "${recipe}": Recipe SVG icon isn't a square`,
+          `⚠️ Couldn't package "${recipe}": Recipe png icon isn't a square`,
         );
         unsuccessful += 1;
         continue;
@@ -276,14 +276,14 @@ const compress = (src, dest) =>
 
     // Copy recipe to temp folder
     fs.copySync(recipeSrc, path.join(tempFolder, config.id), {
-      filter: src => !src.endsWith('icon.svg'),
+      filter: src => !src.endsWith('icon.png'),
     });
 
     if (!config.defaultIcon) {
-      // Check if icon.svg exists
-      if (!fs.existsSync(svgIcon)) {
+      // Check if icon.png exists
+      if (!fs.existsSync(pngIcon)) {
         console.log(
-          `⚠️ Couldn't package "${recipe}": The recipe doesn't contain a "icon.svg" or "defaultIcon" in package.json`,
+          `⚠️ Couldn't package "${recipe}": The recipe doesn't contain a "icon.png" or "defaultIcon" in package.json`,
         );
         unsuccessful += 1;
       }
@@ -291,7 +291,7 @@ const compress = (src, dest) =>
       const tempPackage = fs.readJsonSync(
         path.join(tempFolder, config.id, 'package.json'),
       );
-      tempPackage.defaultIcon = `${repo}${config.id}/icon.svg`;
+      tempPackage.defaultIcon = `${repo}${config.id}/icon.png`;
 
       fs.writeJSONSync(
         path.join(tempFolder, config.id, 'package.json'),
@@ -316,9 +316,7 @@ const compress = (src, dest) =>
       id: config.id,
       name: config.name,
       version: config.version,
-      icons: {
-        svg: `${repo}${config.id}/icon.png`,
-      },
+      icons: `${repo}${config.id}/icon.png`,
     };
     recipeList.push(packageInfo);
   }
